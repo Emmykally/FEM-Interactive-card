@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="stylesheet" href="styles.css">
+    <title>Mentor Card</title>
+</head>
+<body class="font-body">
+    <div><!--Wrapper div-->
+        <div class="flex md:flex-row flex-col h-screen w-full"><!--card Container-->
+            <div class="bg-[url('/public/img/bg-main-desktop.png')] bg-cover bg-no-repeat md:h-screen md:w-1/3 h-1/2 w-full ">
+                <div class="relative bg-[url('/public/img/bg-card-front.png')] bg-cover h-36 w-3/4 md:h-40"><!--front card div-->
+                    <div class="absolute bottom-0 right-0 left-0 px-5">
+                            <p class="text-white" id="output-number">0000 0000 0000 0000</p>
+                            <div class="flex justify-between text-white text-sm mt-3 mb-5">
+                                <p id="output-name">Jane Appleseed</p>
+                                <p><span id="output-month">00</span> / <span id="output-year">00</span></p>
+                            </div>
+                    </div>
+                   
+                </div>
+                <div class="relative bg-[url('/public/img/bg-card-back.png')] bg-cover h-36 w-3/4 md:h-44"><!--Back card div-->
+                    <div class="text-white absolute right-10 top-16 mt-2 text-sm">
+                        <p id="output-cvv">000</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6 md:flex md:items-center"><!--Form div-->
+                <form class="md:w-full" id="form"><!--Form section-->
+                    <div class="md:w-1/2 md:m-auto" id="form-section">
+                        <div class="my-4"><!--For card holder name-->
+                            <label class="block text-blue-950 font-bold" for="cardholder-name">CARDHOLDER NAME</label>
+                            <input class="appearance-none border rounded-md w-full py-2.5 px-2"  type="text" id="card-name" placeholder="e.g. Jane Appleseed">
+                            <p class="text-red-500" id="name-format"></p>
+                        </div>
+                        <div class="my-4"><!--For card Number-->
+                            <label class="block text-blue-950 font-bold" for="card-number">CARD NUMBER</label>
+                            <input class="appearance-none border rounded-md w-full py-2.5 px-2"  type="text" id="card-number" maxlength="16" placeholder="e.g. 1234 5678 9123 0000">
+                            <p class="text-red-500" id="number-format"></p>
+                        </div>
+                        <div class="my-4 flex  md:justify-start">
+                            <div class="w-2/4 justify-center mr-6"><!--For expiry date-->
+                                <label class="block text-blue-950 font-bold" for="expiry-date">EXP.DATE (MM/YY)</label>
+                                <div class="flex">
+                                    <input class="mr-4 appearance-none border rounded-md w-full py-2.5 px-2" type="text" maxlength="2" id="month" placeholder="MM">
+                                    <input class="appearance-none border rounded-md w-full py-2.5 px-2" type="text" id="year" maxlength="2" placeholder="YY">
+                                </div>
+                                <p class="text-red-500" id="date-format"></p>
+                            </div>
+                            <div class="w-1/4"><!--For cvv-->
+                                <label class="block text-blue-950 font-bold" for="cvv">CVV</label>
+                                <input class="appearance-none border rounded-md w-full py-2.5 px-2" type="text" id="cvv" maxlength="3" placeholder="e.g. 123">
+                                <p class="text-red-500" id="cvv-format"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="success-section" class="hidden text-center md:w-full md:ml-40">
+                        <img src="img/icon-complete.svg" alt="" class="m-auto">
+                        <h1 class="my-6">Thank You!</h1>
+                        <p class="mb-6">We've added your card details</p>
+                    </div>
+                    <button class="bg-purple-900 text-xl font-bold text-white rounded-lg py-3 w-full md:w-1/2 md:m-auto md:ml-48 flex justify-center" id="btn">Confirm</button>
+                </form>
+              
+            </div>
+        </div>
+       
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
